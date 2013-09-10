@@ -10,18 +10,25 @@ module GotFixed
         @auth_token = auth_token
       end
 
-      # Retrieve all issues of a given GitHub repository
+      # Retrieve all issues of a given GitHub repository matching given labels
+      # Labels must be comma separated, e.g. "public,foo,bar"
       #
-      # Relevant options for GotFixed:
-      #   - state: open|closed (default: open)
-      #   - labels: public,foo,bar
-      #
-      # More options listed here:
-      #   http://developer.github.com/v3/issues/#list-issues-for-a-repository
-      #
-      def issues(owner, repo, options = {})
-        options.merge! :auth_token => @auth_token
-        self.class.get "/repos/#{owner}/#{repo}/issues", options
+      # Doc: http://developer.github.com/v3/issues/#list-issues-for-a-repository
+      def issues(options)
+        owner  = options.delete :owner
+        repo   = options.delete :repo
+        labels = options.delete :labels
+
+        opened = issues_with_state(owner, repo, labels, :open)
+        closed = issues_with_state(owner, repo, labels, :closed)
+        opened + closed
+      end
+
+      private
+
+      def issues_with_state(owner, repo, query, state)
+        query = { :labels => labels, :auth_token => @auth_token }
+        self.class.get "/repos/#{owner}/#{repo}/issues", :query => query.merge(:state => state)
       end
 
     end
