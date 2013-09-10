@@ -1,25 +1,24 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'got_fixed/version'
+$:.push File.expand_path("../lib", __FILE__)
 
-Gem::Specification.new do |spec|
-  spec.name          = "got_fixed"
-  spec.version       = GotFixed::VERSION
-  spec.authors       = ["Sebastien Saunier"]
-  spec.email         = ["seb@saunier.me"]
-  spec.description   = %q{Build a public dashboard of your private issue tracker}
-  spec.summary       = %q{Build a public dashboard of your private issue tracker}
-  spec.homepage      = "https://github.com/ssaunier/got_fixed"
-  spec.license       = "MIT"
+# Maintain your gem's version:
+require "got_fixed/version"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+# Describe your gem and declare its dependencies:
+Gem::Specification.new do |s|
+  s.name        = "got_fixed"
+  s.version     = GotFixed::VERSION
+  s.authors       = ["Sebastien Saunier"]
+  s.email         = ["seb@saunier.me"]
+  s.description   = %q{Build a public dashboard of your private issue tracker}
+  s.summary       = %q{Build a public dashboard of your private issue tracker}
+  s.homepage      = "https://github.com/ssaunier/got_fixed"
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["test/**/*"]
 
-  spec.add_dependency "httparty"
+  s.add_dependency "rails", "~> 3.2"
+  s.add_dependency "httparty"
+  # s.add_dependency "jquery-rails"
+
+  s.add_development_dependency "sqlite3"
 end

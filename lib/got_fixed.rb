@@ -1,5 +1,4 @@
-require "got_fixed/version"
+require "got_fixed/engine"
 
 module GotFixed
-  # Your code goes here...
 end
