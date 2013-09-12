@@ -14,11 +14,14 @@ Gem::Specification.new do |s|
   s.homepage      = "https://github.com/ssaunier/got_fixed"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", ">= 3.1"
   s.add_dependency "httparty"
   # s.add_dependency "jquery-rails"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'factory_girl_rails'
 end
