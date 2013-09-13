@@ -1,0 +1,5 @@
+github:
+  - owner: applidget
+    repo: laptop
+    labels: public
+    auth_token: dummy

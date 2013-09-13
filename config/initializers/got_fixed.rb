@@ -1,0 +1,1 @@
+GotFixed.config = YAML.load_file(Rails.root.join('config', 'got_fixed.yml')).symbolize_keys
