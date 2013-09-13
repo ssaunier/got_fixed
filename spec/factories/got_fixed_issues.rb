@@ -2,7 +2,9 @@
 
 FactoryGirl.define do
   factory :got_fixed_issue, :class => 'Issue' do
-    title "MyString"
+    title "A very bad issue..."
     closed false
+    vendor_id "iWnj89"
+    number 7
   end
 end
