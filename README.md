@@ -25,7 +25,11 @@ And then execute:
 
 You need to mount the engine in your `config/routes.rb`:
 
-    mount GotFixed::Engine => "/got_fixed"
+    Awesome::Application.routes.draw do
+
+      mount GotFixed::Engine => "/got_fixed"
+
+    end
 
 `GotFixed` need the following configuration file, `config/got_fixed.yml`
 
