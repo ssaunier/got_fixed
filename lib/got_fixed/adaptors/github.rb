@@ -26,7 +26,7 @@ module GotFixed
 
       private
 
-      def issues_with_state(owner, repo, query, state)
+      def issues_with_state(owner, repo, labels, state)
         query = { :labels => labels, :auth_token => @auth_token }
         self.class.get "/repos/#{owner}/#{repo}/issues", :query => query.merge(:state => state)
       end
