@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://api.github.com/repos/applidget/laptop/issues/1",
+    "labels_url": "https://api.github.com/repos/applidget/laptop/issues/1/labels{/name}",
+    "comments_url": "https://api.github.com/repos/applidget/laptop/issues/1/comments",
+    "events_url": "https://api.github.com/repos/applidget/laptop/issues/1/events",
+    "html_url": "https://github.com/applidget/laptop/issues/1",
+    "id": 3910487,
+    "number": 1,
+    "title": "Add a subset of the powerful script \"OSX For Hackers\"",
+    "user": {
+      "login": "ssaunier",
+      "id": 414418,
+      "avatar_url": "https://1.gravatar.com/avatar/223f2ffb700f5c4a7ac5f9119e02d84d?d=https%3A%2F%2Fidenticons.github.com%2F7ca0ad7acfe49cfbdf24c79e592aafd3.png",
+      "gravatar_id": "223f2ffb700f5c4a7ac5f9119e02d84d",
+      "url": "https://api.github.com/users/ssaunier",
+      "html_url": "https://github.com/ssaunier",
+      "followers_url": "https://api.github.com/users/ssaunier/followers",
+      "following_url": "https://api.github.com/users/ssaunier/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ssaunier/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ssaunier/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ssaunier/subscriptions",
+      "organizations_url": "https://api.github.com/users/ssaunier/orgs",
+      "repos_url": "https://api.github.com/users/ssaunier/repos",
+      "events_url": "https://api.github.com/users/ssaunier/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ssaunier/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/applidget/laptop/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2012-03-31T14:27:19Z",
+    "updated_at": "2012-03-31T14:27:19Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "See this gist: https://gist.github.com/2260182\r\n\r\nWe don't want all of it, but some features as really great:\r\n\r\n```bash\r\necho \"Enable Safari’s debug menu\"\r\ndefaults write com.apple.Safari IncludeInternalDebugMenu -bool true\r\n```"
+  }
+]
