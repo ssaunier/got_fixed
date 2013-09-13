@@ -5,7 +5,7 @@
 
 namespace :got_fixed do
 
-  desc "Import github issues from repos found in config"
+  desc "Import github issues from repos found in config/got_fixed.yml"
   task :import_github => :environment do
     issue_factory = IssueFactory.new
 

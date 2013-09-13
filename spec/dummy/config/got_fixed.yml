@@ -3,3 +3,7 @@ github:
     repo: laptop
     labels: public
     auth_token: dummy
+  - owner: ssaunier
+    repo: dotfiles
+    labels: public
+    auth_token: dummy
