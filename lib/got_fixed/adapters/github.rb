@@ -1,7 +1,7 @@
 require "httparty"
 
 module GotFixed
-  module Adaptors
+  module Adapters
     class Github
       include HTTParty
       base_uri "https://api.github.com"

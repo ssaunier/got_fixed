@@ -11,7 +11,7 @@ namespace :got_fixed do
 
     GotFixed.config[:github].each do |repo|
       repo.symbolize_keys!
-      github = GotFixed::Adaptors::Github.new repo[:auth_token]
+      github = GotFixed::Adapters::Github.new repo[:auth_token]
       github.issues(repo).each do |gh_issue|
         issue = issue_factory.from_github gh_issue
         if issue.save
