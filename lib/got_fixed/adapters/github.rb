@@ -15,9 +15,9 @@ module GotFixed
       #
       # Doc: http://developer.github.com/v3/issues/#list-issues-for-a-repository
       def issues(options)
-        owner  = options.delete :owner
-        repo   = options.delete :repo
-        labels = options.delete :labels
+        owner  = options[:owner]
+        repo   = options[:repo]
+        labels = options[:labels]
 
         opened = issues_with_state(owner, repo, labels, :open)
         closed = issues_with_state(owner, repo, labels, :closed)
