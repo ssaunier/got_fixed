@@ -5,7 +5,8 @@ module GotFixed
         :title => github_issue["title"],
         :closed => github_issue["state"] == "closed",
         :vendor_id => github_issue["id"],
-        :number => github_issue["number"]
+        :number => github_issue["number"],
+        :vendor => "github"
     end
   end
 end
