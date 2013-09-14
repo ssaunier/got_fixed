@@ -1,1 +1,1 @@
-GotFixed.config = YAML.load_file(Rails.root.join('config', 'got_fixed.yml')).symbolize_keys
+GotFixed.config = YAML.load(ERB.new(File.read(Rails.root.join('config', 'got_fixed.yml'))).result).symbolize_keys

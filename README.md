@@ -34,11 +34,11 @@ You need to mount the engine in your `config/routes.rb`:
 `GotFixed` need the following configuration file, `config/got_fixed.yml`
 
     github:
-      - auth_token: <%= ENV['GITHUB_PRIVATE_AUTH_TOKEN'] %>
+      - auth_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
         repo: secret_repo
         owner: ssaunier
         labels: public
-      - auth_token: <%= ENV['GITHUB_PRIVATE_AUTH_TOKEN'] %>
+      - auth_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
         repo: other_secret_repo
         owner: ssaunier
         labels:public
