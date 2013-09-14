@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130913195152) do
+ActiveRecord::Schema.define(version: 20130914085003) do
 
   create_table "got_fixed_issues", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130913195152) do
     t.datetime "updated_at"
     t.integer  "number"
     t.string   "vendor_id"
+    t.string   "vendor"
   end
 
 end
