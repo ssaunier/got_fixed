@@ -28,11 +28,30 @@ module GotFixed
         self.class.get "/repos/#{owner}/#{repo}/hooks", :query => { :access_token => @access_token }
       end
 
+      def create_hook(owner, repo)
+        body = {
+          :name => "web",
+          :config => {
+            :url => "http://requestb.in/1dhgpxf1",
+            :content_type => "json",
+            :secret => "secret"  # TODO(ssaunier): check X-Hub-Signature
+          },
+          :events => [ 'issues' ]
+        }
+        self.class.post "/repos/#{owner}/#{repo}/hooks", :body => body.to_json, :headers => headers
+      end
+
       private
 
       def issues_with_state(owner, repo, labels, state)
         query = { :labels => labels, :access_token => @access_token }
         self.class.get "/repos/#{owner}/#{repo}/issues", :query => query.merge(:state => state)
+      end
+
+      def headers
+        {
+          "Authorization" => "token #{@access_token}"
+        }
       end
 
     end
