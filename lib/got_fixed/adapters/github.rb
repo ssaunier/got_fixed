@@ -24,10 +24,6 @@ module GotFixed
         opened + closed
       end
 
-      def hooks(owner, repo)
-        self.class.get "/repos/#{owner}/#{repo}/hooks", :query => { :auth_token => @auth_token }
-      end
-
       private
 
       def issues_with_state(owner, repo, labels, state)
