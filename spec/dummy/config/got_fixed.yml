@@ -2,8 +2,8 @@ github:
   - owner: applidget
     repo: laptop
     labels: ""
-    auth_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+    access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
   - owner: ssaunier
     repo: dotfiles
     labels: ""
-    auth_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+    access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>

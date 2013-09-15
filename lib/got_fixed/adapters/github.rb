@@ -6,8 +6,8 @@ module GotFixed
       include HTTParty
       base_uri "https://api.github.com"
 
-      def initialize(auth_token)
-        @auth_token = auth_token
+      def initialize(access_token)
+        @access_token = access_token
       end
 
       # Retrieve all issues of a given GitHub repository matching given labels
@@ -25,13 +25,13 @@ module GotFixed
       end
 
       def hooks(owner, repo)
-        self.class.get "/repos/#{owner}/#{repo}/hooks", :query => { :auth_token => @auth_token }
+        self.class.get "/repos/#{owner}/#{repo}/hooks", :query => { :access_token => @access_token }
       end
 
       private
 
       def issues_with_state(owner, repo, labels, state)
-        query = { :labels => labels, :auth_token => @auth_token }
+        query = { :labels => labels, :access_token => @access_token }
         self.class.get "/repos/#{owner}/#{repo}/issues", :query => query.merge(:state => state)
       end
 
