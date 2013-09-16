@@ -53,7 +53,7 @@ module GotFixed
         [:access_token, :owner, :repo].each do |option|
           self.send :"#{option}=", options[option] unless blank?(options[option])
           if !allow_empty && blank?(self.send option)
-            raise ArgumentError "Missing mandatory :#{option} option"
+            raise ArgumentError.new "Missing mandatory :#{option} option"
           end
         end
       end
