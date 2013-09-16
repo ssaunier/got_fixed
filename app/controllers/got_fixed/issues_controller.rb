@@ -18,7 +18,7 @@ module GotFixed
       @issue.title = params[:issue][:title]
       @issue.closed = params[:issue][:state] == "closed"
       @issue.save
-      respond_with @issue
+      render :json => @issue
     end
 
     # # POST /issues
