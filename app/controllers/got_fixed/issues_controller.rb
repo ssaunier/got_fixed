@@ -4,12 +4,21 @@ module GotFixed
   class IssuesController < ApplicationController
     # before_action :set_issue, only: [:destroy]
 
+    respond_to :json, :only => :github_webhook
+
     # GET /issues
     def index
       @issues = Issue.all
     end
 
     def github_webhook
+      # TODO(ssaunier): json payload as "action" set to opened, closed or repoend
+      #                 figure out how to get it (conflict with rails action param...)
+      @issue = Issue.find_or_initialize_by :vendor_id => params[:issue][:id], :vendor => "github"
+      @issue.title = params[:issue][:title]
+      @issue.closed = params[:issue][:state] == "closed"
+      @issue.save
+      respond_with @issue
     end
 
     # # POST /issues
