@@ -9,6 +9,9 @@ module GotFixed
       @issues = Issue.all
     end
 
+    def github_webhook
+    end
+
     # # POST /issues
     # def create
     #   @issue = Issue.new(issue_params)
