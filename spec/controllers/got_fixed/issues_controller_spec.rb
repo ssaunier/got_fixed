@@ -45,6 +45,19 @@ module GotFixed
       end
     end
 
+    describe "POST github_webhook" do
+      it "creates an issue from an 'opened' event" do
+        params = JSON.load(File.open "spec/factories/github/hook-issues-event.json")
+        post :github_webhook, params, valid_session
+
+        @issue = assigns(:issue)
+        @issue.should be_valid
+        @issue.vendor_id.should eq params["issue"]["id"].to_s
+        @issue.title.should eq params["issue"]["title"]
+        @issue.closed.should be_false
+      end
+    end
+
     # describe "POST create" do
     #   describe "with valid params" do
     #     it "creates a new Issue" do
