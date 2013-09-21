@@ -3,7 +3,9 @@ github:
     repo: laptop
     labels: ""
     access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+    webhook_secret: secret
   - owner: ssaunier
     repo: dotfiles
     labels: ""
     access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+    webhook_secret: secret
