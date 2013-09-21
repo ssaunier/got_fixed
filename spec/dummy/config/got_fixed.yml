@@ -1,6 +1,6 @@
 github:
-  - owner: applidget
-    repo: laptop
+  - owner: ssaunier
+    repo: got_fixed
     labels: ""
     access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
     webhook_secret: secret
