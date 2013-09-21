@@ -8,12 +8,5 @@ module GotFixed
       g.assets false
       g.helper false
     end
-
-    def self.mounted_path
-      route = Rails.application.routes.routes.detect do |route|
-        route.app == self
-      end
-      route && route.path
-    end
   end
 end
