@@ -3,16 +3,17 @@ require 'spec_helper'
 module GotFixed
   module Adapters
     describe Github do
+
       describe "#new" do
         it "should allow to build an object without any parameters" do
-          lambda { Github.new }.should_not raise_error ArgumentError
+          expect { Github.new }.not_to raise_error
         end
       end
 
       describe "#issues" do
         it "should raise an argument error if :access_token is missing" do
           @github = Github.new
-          lambda { @github.issues }.should raise_error ArgumentError
+          expect { @github.issues }.to raise_error
         end
 
         it "should not raise the argument error for :access_token if provided in #new" do
@@ -55,12 +56,14 @@ module GotFixed
 
         it "should not raise the argument error for :repo if provided in #new" do
           @github = Github.new :access_token => "foo", :owner => "owner", :repo => "repo"
-          lambda { @github.issues }.should_not raise_error ArgumentError
+          stub_request(:get, /issues/).to_return(:body => "{}", :status => 200)
+          expect { @github.issues }.not_to raise_error
         end
 
         it "should not raise the argument error for :repo if provided as option" do
           @github = Github.new
-          lambda { @github.issues  :access_token => "foo", :owner => "owner", :repo => "repo" }.should_not raise_error ArgumentError
+          stub_request(:get, /issues/).to_return(:body => "{}", :status => 200)
+          expect { @github.issues  :access_token => "foo", :owner => "owner", :repo => "repo" }.not_to raise_error
         end
 
       end

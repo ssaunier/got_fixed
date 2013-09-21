@@ -32,8 +32,8 @@ module GotFixed
 
       def create_hook(options = {})
         ensure_mandatory_parameters options
-        url = options[:url] || "http://requestb.in/1dhgpxf1"
-        secret = options[:secret] || "secret"  # TODO(ssaunier): check X-Hub-Signature on receive
+        url = options[:url] || "http://requestb.in/xy043uxy"
+        secret = options[:secret]  # TODO(ssaunier): Raise error if secret not set.
 
         body = {
           :name => "web",

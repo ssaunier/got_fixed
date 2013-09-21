@@ -46,15 +46,18 @@ module GotFixed
     end
 
     describe "POST github_webhook" do
-      it "creates an issue from an 'opened' event" do
+      it "creates an issue from an 'closed' event" do
         params = JSON.load(File.open "spec/factories/github/hook-issues-event.json")
-        post :github_webhook, params, valid_session
+        request.headers["X-Hub-Signature"] = "sha1=7e5f575e2e92360b4f13a2100d930e770f26fde3"
+        request.headers["Content-Type"] = "application/json"
+        request.env["RAW_POST_DATA"] = JSON.generate(params)  # Hackish as Rspec creates a url-encoded payload...
+        post :github_webhook, params, :format => :json
 
         @issue = assigns(:issue)
         @issue.should be_valid
         @issue.vendor_id.should eq params["issue"]["id"].to_s
         @issue.title.should eq params["issue"]["title"]
-        @issue.closed.should be_false
+        @issue.closed.should be_true
       end
     end
 
