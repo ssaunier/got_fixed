@@ -3,6 +3,7 @@ require_dependency "got_fixed/application_controller"
 module GotFixed
   class IssuesController < ApplicationController
     # before_action :set_issue, only: [:destroy]
+    before_action :check_hub_signature, :only => :github_webhook
 
     respond_to :json, :only => :github_webhook
 
@@ -20,6 +21,15 @@ module GotFixed
       @issue.save
       render :json => @issue
     end
+
+    private
+
+      def check_hub_signature!
+        owner, repo = params[:repository][:full_name].split("/")
+        options = GotFixed.config[:github].select(:owner => owner, :repo => repo).first
+        github = Adapters::Github.new options
+        github.check_hub_signature! request.env['HTTP_X_HUB_SIGNATURE'].to_s, request.body.rewind.read
+      end
 
     # # POST /issues
     # def create
