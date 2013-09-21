@@ -12,6 +12,8 @@
 // X-Hub-Signature: sha1=44b42f6259f6c58afc28c4f616551ce2a09a159a
 // Accept: */*
 
+// Secret was: "secret"
+
 {
   "action": "opened",
   "issue": {

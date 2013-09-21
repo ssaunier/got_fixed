@@ -6,10 +6,7 @@ module GotFixed
       include HTTParty
       base_uri "https://api.github.com"
 
-      attr_accessor :access_token, :owner, :repo, :webhook_secret
-
-      HMAC_DIGEST = OpenSSL::Digest::Digest.new('sha1')
-      class GithubWebhookSignatureError < StandardError; end
+      attr_accessor :access_token, :owner, :repo
 
       def initialize(options = {})
         ensure_mandatory_parameters options, true
@@ -49,17 +46,10 @@ module GotFixed
         self.class.post "/repos/#{@owner}/#{@repo}/hooks", :body => body.to_json, :headers => headers
       end
 
-      def check_hub_signature!(header, body)
-        expected_signature = "sha1=#{OpenSSL::HMAC.hexdigest(HMAC_DIGEST, @webhook_secret, body)}"
-        if header != expected_signature
-          raise GithubWebhookSignatureError.new "#{header} != #{expected_signature}"
-        end
-      end
-
       private
 
       def ensure_mandatory_parameters(options, allow_empty = false)
-        [:access_token, :owner, :repo, :webhook_secret].each do |option|
+        [:access_token, :owner, :repo].each do |option|
           self.send :"#{option}=", options[option] unless blank?(options[option])
           if !allow_empty && blank?(self.send option)
             raise ArgumentError.new "Missing mandatory :#{option} option"
