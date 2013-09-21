@@ -26,11 +26,12 @@ module GotFixed
 
       def check_hub_signature!
         owner, repo = params[:repository][:full_name].split("/")
-        options = GotFixed.config[:github].select(:owner => owner, :repo => repo).first
-        body = request.body.rewind.read
+        options = GotFixed.config[:github].find(:owner => owner, :repo => repo).first.symbolize_keys
+        request.body.rewind
+        request_body = request.body.read
 
         github_webhook = Receivers::GithubWebhook.new :secret => options[:webhook_secret]
-        github_webhook.check_hub_signature! request.env['HTTP_X_HUB_SIGNATURE'].to_s, body
+        github_webhook.check_hub_signature! request.headers['X-Hub-Signature'], request_body
       end
 
     # # POST /issues

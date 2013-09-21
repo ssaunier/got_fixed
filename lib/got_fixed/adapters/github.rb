@@ -32,14 +32,15 @@ module GotFixed
 
       def create_hook(options = {})
         ensure_mandatory_parameters options
-        url = options[:url] || "http://requestb.in/1dhgpxf1"
+        url = options[:url] || "http://requestb.in/xy043uxy"
+        secret = options[:secret]  # TODO(ssaunier): Raise error if secret not set.
 
         body = {
           :name => "web",
           :config => {
             :url => url,
             :content_type => "json",
-            :secret => @webhook_secret
+            :secret => secret
           },
           :events => [ 'issues' ]
         }

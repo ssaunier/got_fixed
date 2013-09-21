@@ -6,3 +6,5 @@ require "got_fixed/receivers/github_webhook"
 module GotFixed
   mattr_accessor :config
 end
+
+WebMock.disable! if require "webmock"

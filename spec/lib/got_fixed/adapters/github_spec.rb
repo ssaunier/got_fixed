@@ -3,9 +3,6 @@ require 'spec_helper'
 module GotFixed
   module Adapters
     describe Github do
-      before(:each) do
-        stub_request(:any, /api\.github\.com/)  # Never accenditally call Github
-      end
 
       describe "#new" do
         it "should allow to build an object without any parameters" do

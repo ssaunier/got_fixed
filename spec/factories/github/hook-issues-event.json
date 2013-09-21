@@ -1,21 +1,20 @@
 // http://requestb.in
-// POST /1dhgpxf1
+// POST /xy043uxy
 //
-// HEADERS:
-// Content-Type: application/json
-// X-Github-Delivery: fbaccb00-1e4c-11e3-83cb-ca6ed32e0d32
+// X-Hub-Signature: sha1=7e5f575e2e92360b4f13a2100d930e770f26fde3
 // Host: requestb.in
+// X-Github-Delivery: 6e310700-22a2-11e3-82e6-c75a2b13e7f4
 // X-Github-Event: issues
+// Content-Type: application/json
 // Connection: close
-// Content-Length: 7331
-// User-Agent: GitHub Hookshot bbde025
-// X-Hub-Signature: sha1=44b42f6259f6c58afc28c4f616551ce2a09a159a
+// Content-Length: 7360
 // Accept: */*
+// User-Agent: GitHub Hookshot bbde025
 
 // Secret was: "secret"
 
 {
-  "action": "opened",
+  "action": "closed",
   "issue": {
     "url": "https://api.github.com/repos/ssaunier/got_fixed/issues/1",
     "labels_url": "https://api.github.com/repos/ssaunier/got_fixed/issues/1/labels{/name}",
@@ -43,14 +42,16 @@
       "received_events_url": "https://api.github.com/users/ssaunier/received_events",
       "type": "User"
     },
-    "labels": [],
-    "state": "open",
+    "labels": [
+
+    ],
+    "state": "closed",
     "assignee": null,
     "milestone": null,
     "comments": 0,
     "created_at": "2013-09-15T21:22:54Z",
-    "updated_at": "2013-09-15T21:22:54Z",
-    "closed_at": null,
+    "updated_at": "2013-09-21T09:44:38Z",
+    "closed_at": "2013-09-21T09:44:38Z",
     "pull_request": {
       "html_url": null,
       "diff_url": null,
@@ -65,7 +66,7 @@
     "owner": {
       "login": "ssaunier",
       "id": 414418,
-      "avatar_url": "https://0.gravatar.com/avatar/223f2ffb700f5c4a7ac5f9119e02d84d?d=https%3A%2F%2Fidenticons.github.com%2F7ca0ad7acfe49cfbdf24c79e592aafd3.png",
+      "avatar_url": "https://2.gravatar.com/avatar/223f2ffb700f5c4a7ac5f9119e02d84d?d=https%3A%2F%2Fidenticons.github.com%2F7ca0ad7acfe49cfbdf24c79e592aafd3.png",
       "gravatar_id": "223f2ffb700f5c4a7ac5f9119e02d84d",
       "url": "https://api.github.com/users/ssaunier",
       "html_url": "https://github.com/ssaunier",
@@ -82,7 +83,7 @@
     },
     "private": false,
     "html_url": "https://github.com/ssaunier/got_fixed",
-    "description": "Rails engine to extend your application with a dashboard of your user-reported issues",
+    "description": "Rails engine to extend your application with a dashboard of your user-reported issues (/!\\ WIP)",
     "fork": false,
     "url": "https://api.github.com/repos/ssaunier/got_fixed",
     "forks_url": "https://api.github.com/repos/ssaunier/got_fixed/forks",
@@ -120,14 +121,14 @@
     "notifications_url": "https://api.github.com/repos/ssaunier/got_fixed/notifications{?since,all,participating}",
     "labels_url": "https://api.github.com/repos/ssaunier/got_fixed/labels{/name}",
     "created_at": "2013-09-10T12:55:36Z",
-    "updated_at": "2013-09-15T14:35:57Z",
-    "pushed_at": "2013-09-15T09:29:17Z",
+    "updated_at": "2013-09-21T08:26:53Z",
+    "pushed_at": "2013-09-21T08:26:48Z",
     "git_url": "git://github.com/ssaunier/got_fixed.git",
     "ssh_url": "git@github.com:ssaunier/got_fixed.git",
     "clone_url": "https://github.com/ssaunier/got_fixed.git",
     "svn_url": "https://github.com/ssaunier/got_fixed",
-    "homepage": null,
-    "size": 280,
+    "homepage": "",
+    "size": 436,
     "watchers_count": 1,
     "language": "Ruby",
     "has_issues": true,
@@ -145,7 +146,7 @@
   "sender": {
     "login": "ssaunier",
     "id": 414418,
-    "avatar_url": "https://0.gravatar.com/avatar/223f2ffb700f5c4a7ac5f9119e02d84d?d=https%3A%2F%2Fidenticons.github.com%2F7ca0ad7acfe49cfbdf24c79e592aafd3.png",
+    "avatar_url": "https://2.gravatar.com/avatar/223f2ffb700f5c4a7ac5f9119e02d84d?d=https%3A%2F%2Fidenticons.github.com%2F7ca0ad7acfe49cfbdf24c79e592aafd3.png",
     "gravatar_id": "223f2ffb700f5c4a7ac5f9119e02d84d",
     "url": "https://api.github.com/users/ssaunier",
     "html_url": "https://github.com/ssaunier",
