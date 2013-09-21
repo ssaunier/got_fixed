@@ -3,6 +3,10 @@ require 'spec_helper'
 module GotFixed
   module Adapters
     describe Github do
+      before(:each) do
+        stub_request(:any, /api\.github\.com/)  # Never accenditally call Github
+      end
+
       describe "#new" do
         it "should allow to build an object without any parameters" do
           expect { Github.new }.not_to raise_error
@@ -55,11 +59,13 @@ module GotFixed
 
         it "should not raise the argument error for :repo if provided in #new" do
           @github = Github.new :access_token => "foo", :owner => "owner", :repo => "repo"
+          stub_request(:get, /issues/).to_return(:body => "{}", :status => 200)
           expect { @github.issues }.not_to raise_error
         end
 
         it "should not raise the argument error for :repo if provided as option" do
           @github = Github.new
+          stub_request(:get, /issues/).to_return(:body => "{}", :status => 200)
           expect { @github.issues  :access_token => "foo", :owner => "owner", :repo => "repo" }.not_to raise_error
         end
 
