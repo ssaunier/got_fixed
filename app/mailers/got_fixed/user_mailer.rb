@@ -3,8 +3,14 @@ module GotFixed
     default from: GotFixed.config[:user_mailer][:from]
 
     def issue_got_fixed_email(user, issue)
-      subject = GotFixed.config[:user_mailer][:subject_template] % issue.attributes.symbolize_keys
-      mail(to: user.email, subject: subject)
+      mail(to: user.email, subject: subject(issue))
     end
+
+    private
+
+      def subject(issue)
+        template = GotFixed.config[:user_mailer][:subject_template]
+        template % issue.attributes.symbolize_keys
+      end
   end
 end
