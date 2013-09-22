@@ -1,3 +1,7 @@
+user_mailer:
+  from: '"GotFixed Notifications" <noreply@saunier.me>'
+  subject_template: "[Fixed] %{title}"
+
 github:
   - owner: ssaunier
     repo: got_fixed

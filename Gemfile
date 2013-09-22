@@ -16,4 +16,8 @@ gem "jquery-rails"
 # To use debugger
 gem 'debugger'
 
+# Handy helper for the console (ap my_vars)
 gem 'awesome_print'
+
+# Catch development emails
+gem 'mailcatcher'
