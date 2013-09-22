@@ -2,7 +2,7 @@ require "spec_helper"
 
 module GotFixed
   describe UserMailer do
-    describe "#subject (private)" do
+    describe "#subject" do
       it "should evaluate template with issue title" do
         @user_mailer = UserMailer.send :new
         issue = FactoryGirl.build :got_fixed_issue, :title => "Dummy issue"
@@ -12,7 +12,7 @@ module GotFixed
             :subject_template => "[Fixed] %{title}"
           }
         }
-        @user_mailer.send(:subject, issue).should eq "[Fixed] Dummy issue"
+        @user_mailer.subject(issue).should eq "[Fixed] Dummy issue"
         GotFixed.config = old_config
       end
     end
