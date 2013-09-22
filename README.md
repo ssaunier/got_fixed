@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ssaunier/got_fixed.png)](https://travis-ci.org/ssaunier/got_fixed)
+
 # GotFixed
 
 This gem provides an engine to help communicate to your users when issues they
