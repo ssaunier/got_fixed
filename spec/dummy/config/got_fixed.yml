@@ -1,11 +1,11 @@
 github:
   - owner: ssaunier
     repo: got_fixed
-    labels: ""
+    labels: "demo"  # Comma-separated labels for github issues to be shown on dashboard
     access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
-    webhook_secret: secret
-  - owner: ssaunier
-    repo: dotfiles
-    labels: ""
-    access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
-    webhook_secret: secret
+    webhook_secret: <%= ENV['GITHUB_WEBHOOK_SECRET'] %>
+# - owner: ssaunier
+#   repo: dotfiles
+#   labels: ""
+#   access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+#   webhook_secret: <%= ENV['GITHUB_WEBHOOK_SECRET'] %>
