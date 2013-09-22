@@ -12,12 +12,15 @@ namespace :got_fixed do
     GotFixed.config[:github].each do |repo|
       repo.symbolize_keys!
       github = GotFixed::Adapters::Github.new
-      github.issues(repo).each do |gh_issue|
+      issues = github.issues(repo)
+      puts "Found #{issues.size} issues for #{repo[:owner]}/#{repo[:repo]}, filtering on labels '#{repo[:labels]}'"
+
+      issues.each do |gh_issue|
         issue = issue_factory.from_github gh_issue
         if issue.save
-          puts "Imported issue ##{gh_issue["number"]} from #{repo[:owner]}/#{repo[:repo]}: #{gh_issue["title"]}"
+          puts "Issue ##{gh_issue["number"]} #{issue.persisted? ? "updat" : "import"}ed: #{gh_issue["title"]}"
         else
-          puts "/!\\ Could not import issue ##{gh_issue["number"]} from #{repo[:owner]}/#{repo[:repo]}: #{issue.errors.messages}"
+          puts "\e[32mCould not import issue ##{gh_issue["number"]} from #{repo[:owner]}/#{repo[:repo]}: #{issue.errors.messages}\e[0;0m"
         end
       end
     end
