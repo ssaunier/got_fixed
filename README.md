@@ -45,3 +45,12 @@ You need to mount the engine in your `config/routes.rb`:
 
 TODO(ssaunier): explain the database installation + rake task
 to init the DB.
+
+## Test in dummy app:
+
+You can launch the dummy rails app with the following command:
+```
+(cd spec/dummy && bundle exec rails s)
+```
+And then point your browser to http://localhost:3000, you should be redirected
+to the `/got_fixed` engine route.
