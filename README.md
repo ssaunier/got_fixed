@@ -52,5 +52,5 @@ You can launch the dummy rails app with the following command:
 ```
 (cd spec/dummy && bundle exec rails s)
 ```
-And then point your browser to http://localhost:3000, you should be redirected
+And then point your browser to [localhost:3000](http://localhost:3000), you should be redirected
 to the `/got_fixed` engine route.
