@@ -10,7 +10,6 @@ namespace :got_fixed do
     issue_factory = GotFixed::IssueFactory.new
 
     GotFixed.config[:github].each do |repo|
-      repo.symbolize_keys!
       github = GotFixed::Adapters::Github.new
       issues = github.issues(repo)
       puts "Found #{issues.size} issues for #{repo_name(repo)}, filtering on labels '#{repo[:labels]}'"
@@ -38,7 +37,6 @@ namespace :got_fixed do
     end
 
     GotFixed.config[:github].each do |repo|
-      repo.symbolize_keys!
       if repo[:webhook_secret].blank?
         puts "/!\\ Empty webhook_secret for repository #{repo_name(repo)}, skipping webhook creation"
         next
