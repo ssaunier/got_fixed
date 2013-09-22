@@ -3,7 +3,7 @@ github:
     repo: got_fixed
     labels: "demo"  # Comma-separated labels for github issues to be shown on dashboard
     access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
-    webhook_secret: <%= ENV['GITHUB_WEBHOOK_SECRET'] %>
+    webhook_secret: "secret"  # For specs, should be <%= ENV['GITHUB_WEBHOOK_SECRET'] %>
 # - owner: ssaunier
 #   repo: dotfiles
 #   labels: ""
