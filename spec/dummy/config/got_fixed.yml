@@ -1,3 +1,7 @@
+user_mailer:
+  from: "noreply@saunier.me"
+  subject_template: ""
+
 github:
   - owner: ssaunier
     repo: got_fixed

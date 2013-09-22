@@ -26,7 +26,7 @@ module GotFixed
 
       def check_hub_signature!
         owner, repo = params[:repository][:full_name].split("/")
-        options = GotFixed.config[:github].find(:owner => owner, :repo => repo).first.symbolize_keys
+        options = GotFixed.config[:github].find(:owner => owner, :repo => repo).first
         request.body.rewind
         request_body = request.body.read
 
