@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130914085003) do
+ActiveRecord::Schema.define(version: 20130924123004) do
 
   create_table "got_fixed_issues", force: true do |t|
     t.string   "title"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 20130914085003) do
     t.integer  "number"
     t.string   "vendor_id"
     t.string   "vendor"
+  end
+
+  create_table "got_fixed_issues_users", force: true do |t|
+    t.integer "user_id"
+    t.integer "issue_id"
+  end
+
+  create_table "got_fixed_users", force: true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_issues", force: true do |t|
+    t.integer "user_id"
+    t.integer "issue_id"
   end
 
 end
