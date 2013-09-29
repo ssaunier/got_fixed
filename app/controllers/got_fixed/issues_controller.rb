@@ -24,9 +24,9 @@ module GotFixed
     end
 
     def subscribe
-      @user = User.find_or_initialize_by :email => params[:issue][:subscriber_email]
-      @issue = Issue.find params[:issue][:id]
-      unless @issue.users.include?(@user
+      @user = User.find_or_initialize_by :email => params[:user][:email]
+      @issue = Issue.find params[:id]
+      unless @issue.users.include?(@user)
         @issue.users << @user
         @issue.save
       end
