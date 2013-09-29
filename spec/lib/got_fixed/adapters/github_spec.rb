@@ -52,8 +52,6 @@ module GotFixed
           }
         end
 
-        # TODO(ssaunier): mock Github .get / .post not to make Github API call.
-
         it "should not raise the argument error for :repo if provided in #new" do
           @github = Github.new :access_token => "foo", :owner => "owner", :repo => "repo"
           stub_request(:get, /issues/).to_return(:body => "{}", :status => 200)
