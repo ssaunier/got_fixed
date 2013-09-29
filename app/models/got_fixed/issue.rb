@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: got_fixed_issues
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  closed     :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#  number     :integer
+#  vendor_id  :string(255)
+#  vendor     :string(255)
+#
+
 module GotFixed
   class Issue < ActiveRecord::Base
     default_scope { order("updated_at DESC") }
