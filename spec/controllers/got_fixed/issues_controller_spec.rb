@@ -61,6 +61,39 @@ module GotFixed
       end
     end
 
+    describe "POST subscribe" do
+      before(:each) do
+        @issue = FactoryGirl.create :got_fixed_issue
+        @issue.users.should be_blank
+      end
+
+      it "creates a user and subscribe him if the email does not exist" do
+        post :subscribe, :id => @issue.id, :user => { :email => "foo@bar.com" }, :format => :js
+
+        @user = assigns(:user)
+        @user.email.should eq "foo@bar.com"
+        @issue.reload.users.should_not be_blank
+      end
+
+      it "should subscribe an existing user" do
+        User.create! :email => "foo@bar.com"
+        post :subscribe, :id => @issue.id, :user => { :email => "foo@bar.com" }, :format => :js
+
+        @user = assigns(:user)
+        @user.email.should eq "foo@bar.com"
+        @issue.reload.users.should_not be_blank
+      end
+
+      it "should behave well when user already registered (not register him twice)" do
+        @issue.users << User.create!(:email => "foo@bar.com")
+        @issue.save
+
+        post :subscribe, :id => @issue.id, :user => { :email => "foo@bar.com" }, :format => :js
+
+        @issue.reload.users.size.should eq 1
+      end
+    end
+
     # describe "POST create" do
     #   describe "with valid params" do
     #     it "creates a new Issue" do

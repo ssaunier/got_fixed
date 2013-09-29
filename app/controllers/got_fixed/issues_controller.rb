@@ -5,7 +5,8 @@ module GotFixed
     # before_action :set_issue, only: [:destroy]
     before_action :check_hub_signature!, :only => :github_webhook
 
-    respond_to :json, :only => :github_webhook
+    respond_to :json
+    respond_to :js
 
     # GET /issues
     def index
@@ -20,6 +21,15 @@ module GotFixed
       @issue.closed = params[:issue][:state] == "closed"
       @issue.save
       render :json => @issue
+    end
+
+    def subscribe
+      @user = User.find_or_initialize_by :email => params[:user][:email]
+      @issue = Issue.find params[:id]
+      unless @issue.users.include?(@user)
+        @issue.users << @user
+        @issue.save
+      end
     end
 
     private
