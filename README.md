@@ -29,23 +29,25 @@ And then execute:
 
 You need to mount the engine in your `config/routes.rb`:
 
-    Awesome::Application.routes.draw do
-
-      mount GotFixed::Engine => "/got_fixed"
-
-    end
+```ruby
+Awesome::Application.routes.draw do
+  mount GotFixed::Engine => "/got_fixed"
+end
+```
 
 `GotFixed` need the following configuration file, `config/got_fixed.yml`
 
-    github:
-      - access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
-        repo: secret_repo
-        owner: ssaunier
-        labels: public
-      - access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
-        repo: other_secret_repo
-        owner: ssaunier
-        labels:public
+```yml
+github:
+  - access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+    repo: secret_repo
+    owner: ssaunier
+    labels: public
+  - access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+    repo: other_secret_repo
+    owner: ssaunier
+    labels:public
+```
 
 TODO(ssaunier): explain the database installation + rake task
 to init the DB.
