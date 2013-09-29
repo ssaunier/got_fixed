@@ -27,3 +27,6 @@ gem 'guard-rspec'
 
 # Coveralls
 gem 'coveralls', require: false
+
+# Annotate models on migrations
+gem "annotate", "2.6.0.beta2"
