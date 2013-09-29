@@ -10,6 +10,8 @@
 
 module GotFixed
   class User < ActiveRecord::Base
+    validates_uniqueness_of :email
+
     has_and_belongs_to_many :issues
 
     def send_notification(issue)
