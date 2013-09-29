@@ -4,7 +4,7 @@ module GotFixed
 
     def send_notification(issue)
       # TODO(ssaunier): async send (SMTP is slow !!)
-      mail = UserMailer.new.issue_got_fixed_email(self, issue)
+      mail = UserMailer.issue_got_fixed_email(self, issue)
       mail.deliver
     end
   end
