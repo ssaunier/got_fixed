@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130924123004) do
+ActiveRecord::Schema.define(version: 20130929180909) do
 
   create_table "got_fixed_issues", force: true do |t|
     t.string   "title"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20130924123004) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "got_fixed_users", ["email"], name: "index_got_fixed_users_on_email", unique: true
 
   create_table "users_issues", force: true do |t|
     t.integer "user_id"
