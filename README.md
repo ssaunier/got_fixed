@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/ssaunier/got_fixed.png)](https://travis-ci.org/ssaunier/got_fixed)
 [![Coverage Status](https://coveralls.io/repos/ssaunier/got_fixed/badge.png?branch=mail-upon-issue-closed)](https://coveralls.io/r/ssaunier/got_fixed?branch=mail-upon-issue-closed)
+[![Gem Version](https://badge.fury.io/rb/got_fixed.png)](http://badge.fury.io/rb/got_fixed)
 
 # GotFixed
 
