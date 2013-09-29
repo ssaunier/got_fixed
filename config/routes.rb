@@ -3,6 +3,9 @@ GotFixed::Engine.routes.draw do
     collection do
       post :github_webhook
     end
+    member do
+      post :subscribe
+    end
   end
 
   root :to => "issues#index"
