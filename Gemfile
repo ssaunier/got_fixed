@@ -21,3 +21,9 @@ gem 'awesome_print'
 
 # Catch development emails
 gem 'mailcatcher'
+
+# Relaunch specs automagically
+gem 'guard-rspec'
+
+# Coveralls
+gem 'coveralls', require: false
