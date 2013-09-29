@@ -3,7 +3,7 @@ module GotFixed
     default_scope { order("updated_at DESC") }
     validates_uniqueness_of :vendor_id, :scope => :vendor
 
-    has_and_belongs_to_many :issues
+    has_and_belongs_to_many :users
 
     after_update :send_notifications, :if => :just_closed?
 
@@ -14,8 +14,8 @@ module GotFixed
       end
 
       def send_notifications
-        issues.each do |issue|
-          issue.send_notification self
+        users.each do |user|
+          user.send_notification self
         end
       end
   end
