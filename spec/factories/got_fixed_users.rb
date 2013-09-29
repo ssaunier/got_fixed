@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :got_fixed_user, :class => 'GotFixed::User' do
-    email "foo@bar.com"
+    sequence :email do |n|
+      "email#{n}@factory.com"
+    end
   end
 end
