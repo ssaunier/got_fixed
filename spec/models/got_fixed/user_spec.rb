@@ -12,5 +12,9 @@ require 'spec_helper'
 
 module GotFixed
   describe User do
+    it "should not be able to create 2 users with the same email" do
+      User.create! :email => "foo@bar.com"
+      expect { User.create! :email => "foo@bar.com" }.to raise_error ActiveRecord::RecordInvalid
+    end
   end
 end
