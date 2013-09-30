@@ -7,4 +7,8 @@ module GotFixed
   mattr_accessor :config
 end
 
-WebMock.disable! if require "webmock"
+begin
+  WebMock.disable! if require "webmock"
+rescue LoadError
+  # When gem is included in 3rd-party project, don't want to use webmock
+end
