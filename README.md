@@ -19,38 +19,21 @@ the dashboard. Once the engine is set up, you'll get a new page:
 
 Add this line to your application's `Gemfile`:
 
+```ruby
     gem 'got_fixed'
+```
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
-## Usage
+Install the config and the engine route with:
 
-You need to mount the engine in your `config/routes.rb`:
+    $ rails g got_fixed:install
 
-```ruby
-Awesome::Application.routes.draw do
-  mount GotFixed::Engine => "/got_fixed"
-end
-```
+You *can* customize the engine monting point in `config/routes.rb`. You **must** specify
+which repositories you want to serve through the GotFixed dashboard in `config/got_fixed.yml`.
 
-`GotFixed` need the following configuration file, `config/got_fixed.yml`
-
-```yml
-github:
-  - access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
-    repo: secret_repo
-    owner: ssaunier
-    labels: public
-  - access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
-    repo: other_secret_repo
-    owner: ssaunier
-    labels:public
-```
-
-TODO(ssaunier): explain the database installation + rake task
-to init the DB.
 
 ## Test in dummy app:
 
