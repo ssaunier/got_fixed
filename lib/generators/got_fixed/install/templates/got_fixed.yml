@@ -1,0 +1,23 @@
+# TODO: Update the user_mailer.from attribute with your email address.
+user_mailer:
+from: '"GotFixed Notifications" <noreply@example.org>'
+subject_template: "[Fixed] %{title}"
+
+# Github repositories exposed on the got_fixed dashboard.
+# - For private repos, create a personal access token here: https://github.com/settings/applications
+# - The webhook secret is something you can generate by hand. It is something you share with
+#   GitHub to make sure that only Github can update your issue database.
+
+# Example:
+#
+# github:
+#   - owner: ssaunier
+#     repo: got_fixed_demo
+#     labels: "demo"  # Comma-separated labels for github issues to be shown on dashboard
+#     access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+#     webhook_secret: <%= ENV['GITHUB_WEBHOOK_SECRET'] %>
+#   - owner: ssaunier
+#     repo: dotfiles
+#     labels: ""
+#     access_token: <%= ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] %>
+#     webhook_secret: <%= ENV['GITHUB_WEBHOOK_SECRET'] %>
