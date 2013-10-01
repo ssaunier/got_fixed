@@ -1,4 +1,9 @@
-config = YAML.load(ERB.new(File.read(Rails.root.join('config', 'got_fixed.yml'))).result)
+config = {}
+begin
+  config = YAML.load(ERB.new(File.read(Rails.root.join('config', 'got_fixed.yml'))).result)
+rescue Errno::ENOENT
+  # Could not find the config/got_fixed.yml file
+end
 
 # https://gist.github.com/ssaunier/3866812
 def symbolize(object)
@@ -15,3 +20,4 @@ def symbolize(object)
 end
 
 GotFixed.config = symbolize(config)
+GotFixed.config[:github] ||= []
