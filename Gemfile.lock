@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    got_fixed (0.0.3)
+    got_fixed (0.0.4)
       httparty
       rails (>= 3.1)
 
