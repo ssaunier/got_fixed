@@ -1,7 +1,7 @@
 # TODO: Update the user_mailer.from attribute with your email address.
 user_mailer:
-from: '"GotFixed Notifications" <noreply@example.org>'
-subject_template: "[Fixed] %{title}"
+  from: '"GotFixed Notifications" <noreply@example.org>'
+  subject_template: "[Fixed] %{title}"
 
 # Github repositories exposed on the got_fixed dashboard.
 # - For private repos, create a personal access token here: https://github.com/settings/applications

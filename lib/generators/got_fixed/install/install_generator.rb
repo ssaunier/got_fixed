@@ -14,6 +14,10 @@ module GotFixed
         route "mount GotFixed::Engine => '/got_fixed'"
       end
 
+      def copy_views
+        directory "views", "app/views"
+      end
+
     end
   end
 end

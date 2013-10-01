@@ -1,21 +1,3 @@
-<h1>Listing issues</h1>
+Please create app/views/got_fixed/issues/index.html.erb in your app.
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Resolved?</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @issues.each do |issue| %>
-      <tr>
-        <td>#<%= issue.number %></td>
-        <td><%= issue.title %></td>
-        <td><%= issue.closed ? "yes" : "no" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+The following variable is available: <code>@issues</code>.
