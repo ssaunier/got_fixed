@@ -80,7 +80,7 @@ Let's assume you host your app on Heroku. If you don't, please extrapolate, you 
 the main idea.
 
     $ git push heroku master
-    $ TODO(ssaunier): heroku run bundle exec rake db:migrate ?
+    $ heroku run bundle exec rake db:migrate
 
 You can seed the dashboard issue database with the following rake command you already
 ran in development:
