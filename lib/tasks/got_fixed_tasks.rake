@@ -50,7 +50,7 @@ namespace :got_fixed do
   end
 
   def repo_name(repo)
-    "#{repo[:owner]}/#{repo[:repo]}}"
+    "#{repo[:owner]}/#{repo[:repo]}"
   end
 
 end
