@@ -16,7 +16,7 @@ module GotFixed
     def github_webhook
       # TODO(ssaunier): json payload as "action" set to opened, closed or repoend
       #                 figure out how to get it (conflict with rails action param...)
-      @issue = Issue.find_or_initialize_by :vendor_id => params[:issue][:id], :vendor => "github"
+      @issue = Issue.find_or_initialize_by :vendor_id => params[:issue][:id].to_s, :vendor => "github"
       @issue.title = params[:issue][:title]
       @issue.closed = params[:issue][:state] == "closed"
       @issue.save
