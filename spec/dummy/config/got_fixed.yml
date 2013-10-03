@@ -1,3 +1,6 @@
+resque:
+  queue: mail
+
 user_mailer:
   from: '"GotFixed Notifications" <noreply@saunier.me>'
   subject_template: "[Fixed] %{title}"

@@ -3,6 +3,11 @@ user_mailer:
   from: '"GotFixed Notifications" <noreply@example.org>'
   subject_template: "[Fixed] %{title}"
 
+# You should use Resque to send emails to user. Just make sure the "resque"
+# gem is in your Gemfile, and uncomment the following.
+# resque:
+#   queue: mail  # Queue used by the GotFixed::NotifyUserOfClosedIssueJob
+
 # Github repositories exposed on the got_fixed dashboard.
 # - For private repos, create a personal access token here: https://github.com/settings/applications
 # - The webhook secret is something you can generate by hand. It is something you share with

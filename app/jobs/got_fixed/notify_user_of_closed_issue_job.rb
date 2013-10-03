@@ -1,5 +1,7 @@
 module GotFixed
   class NotifyUserOfClosedIssueJob
+    @queue = GotFixed.config[:resque][:queue]
+
     def self.perform(user_id, issue_id)
       user = User.find(user_id)
       issue = Issue.find(issue_id)
