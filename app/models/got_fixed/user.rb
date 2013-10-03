@@ -17,9 +17,11 @@ module GotFixed
     has_and_belongs_to_many :issues
 
     def send_notification(issue)
-      # TODO(ssaunier): async send (SMTP is slow !!)
-      mail = UserMailer.issue_got_fixed_email(self, issue)
-      mail.deliver
+      if Module.const_defined?(:Resque) && Resque.respond_to?(:enqueue)
+        Resque.enqueue(NotifyUserOfClosedIssueJob, self.id, issue.id)
+      else
+        NotifyUserOfClosedIssueJob.perform(self.id, issue.id)
+      end
     end
   end
 end

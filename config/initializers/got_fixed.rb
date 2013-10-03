@@ -21,3 +21,4 @@ end
 
 GotFixed.config = symbolize(config)
 GotFixed.config[:github] ||= []
+GotFixed.config[:resque] ||= {}
