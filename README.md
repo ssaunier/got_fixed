@@ -14,6 +14,11 @@ the dashboard. Once the engine is set up, you'll get a new page:
 
     http://myawesomeapp.com/got_fixed
 
+## Demo
+
+There is a [live demo](https://got-fixed-demo.herokuapp.com) hosted on Heroku.
+Source code is [ssaunier/got_fixed_demo](https://github.com/ssaunier/got_fixed_demo).
+
 
 ## Installation
 
@@ -101,12 +106,3 @@ tell them they can register their email address to be notified once this issue i
 Be careful, the email will be sent as soon as the issue is *closed*, so this whole notification
 thing only makes sense if you practise continous deployment.
 
-
-## Test in dummy app:
-
-You can launch the dummy rails app with the following command:
-```
-(cd spec/dummy && bundle exec rails s)
-```
-And then point your browser to [localhost:3000](http://localhost:3000), you should be redirected
-to the `/got_fixed` engine route.
