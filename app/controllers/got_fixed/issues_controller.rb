@@ -1,7 +1,5 @@
-require_dependency "got_fixed/application_controller"
-
 module GotFixed
-  class IssuesController < ApplicationController
+  class IssuesController < ::ApplicationController
     # before_action :set_issue, only: [:destroy]
     before_action :check_hub_signature!, :only => :github_webhook
 
