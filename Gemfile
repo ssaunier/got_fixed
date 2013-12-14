@@ -14,7 +14,7 @@ gem "jquery-rails"
 # your gem to rubygems.org.
 
 # To use debugger
-gem 'debugger'
+# gem 'debugger'
 
 # Handy helper for the console (ap my_vars)
 gem 'awesome_print'
@@ -29,4 +29,5 @@ gem 'guard-rspec'
 gem 'coveralls', require: false
 
 # Annotate models on migrations
-gem "annotate", "2.6.0.beta2"
+gem "annotate", "2.6.0"
+
